@@ -1,101 +1,173 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!--
+Index.html - 90 PRA TRÊS — PARTY (ESTILO "XTRNHO/OPIUM")
+Design: preto, branco e rosa (opium aesthetic). Pronto para salvar como index.html.
+Obs: a capa está apontando para o arquivo local enviado: /mnt/data/7e3d7c3e-e0ea-4b3e-9b8c-7fe49f0c1268.png
+Se for subir pro GitHub, mova essa imagem para assets/cover.jpg e atualize o src.
+-->
+
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>90 PRA TRÊS</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>90 PRA TRÊS — PARTY</title>
+  <meta name="description" content="Primeira mixtape PARTY — 90 PRA TRÊS" />
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #ffffff;
-            color: #ce0d8d;
-        }
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;800&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
 
-        header {
-            text-align: center;
-            padding: 40px 20px;
-            background: #111;
-            font-size: 40px;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
+  <style>
+    :root{
+      --bg:#050406;
+      --panel:#0b0b0d;
+      --pink:#ff5cd9;
+      --white:#ffffff;
+      --muted:#bfbfbf;
+      --glass: rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:var(--bg);color:var(--white);font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', Roboto;}
 
-        .section {
-            padding: 40px 20px;
-            max-width: 800px;
-            margin: auto;
-        }
+    /* layout */
+    .wrap{min-height:100vh; display:grid; place-items:center; padding:48px}
+    .card{width:100%; max-width:1100px; border-radius:18px; padding:28px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.03); box-shadow:0 30px 80px rgba(0,0,0,0.7)}
 
-        h2 {
-            color: #f0d26a;
-            border-left: 5px solid #f0d26a;
-            padding-left: 10px;
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
+    .top{display:flex; align-items:center; justify-content:space-between; gap:18px}
+    .brand{display:flex; align-items:center; gap:14px}
+    .logo{width:84px;height:84px;border-radius:12px;background:linear-gradient(135deg, rgba(255,92,217,0.06), rgba(0,0,0,0.35)); display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.04)}
+    .logo h3{margin:0;font-size:16px;line-height:1;text-transform:uppercase}
 
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
+    .title{font-family:'Orbitron', 'Nunito';font-size:44px;letter-spacing:3px;text-transform:uppercase;margin:0}
+    .subtitle{color:var(--muted);margin-top:6px}
 
-        /* TRACKLIST */
-        .tracklist {
-            list-style: decimal;
-            padding-left: 20px;
-            font-size: 18px;
-            line-height: 1.8;
-        }
+    .content{display:flex; gap:26px; align-items:flex-start; margin-top:22px; flex-wrap:wrap}
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #111;
-            color: #f0d26a;
-            margin-top: 50px;
-        }
-    </style>
+    /* cover */
+    .cover{width:320px;flex:0 0 320px;border-radius:14px;overflow:hidden;position:relative;border:1px solid rgba(255,255,255,0.04)}
+    .cover img{width:100%;height:100%;object-fit:cover;display:block}
+    .cover .badge{position:absolute;left:12px;top:12px;background:rgba(0,0,0,0.5);padding:6px 10px;border-radius:8px;font-weight:700}
+
+    /* tracklist */
+    .panel{flex:1; min-width:320px}
+    .meta{display:flex; align-items:flex-start; gap:18px}
+    .tracks{background:var(--panel); padding:18px; border-radius:12px; border:1px solid rgba(255,255,255,0.02)}
+    .tracks h3{margin:0 0 12px 0; font-size:20px}
+    ol.tracklist{padding-left:20px;margin:0; list-style:decimal; color:var(--white)}
+    ol.tracklist li{padding:8px 0; border-bottom:1px dashed rgba(255,255,255,0.03); display:flex; justify-content:space-between; align-items:center}
+    ol.tracklist li span{color:var(--muted); font-size:13px}
+
+    /* side meta */
+    .side{width:260px; min-width:220px; background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent); padding:16px; border-radius:12px}
+    .side h4{margin:0 0 8px 0}
+    .socials{display:flex; gap:8px; margin-top:12px}
+    .socials a{display:inline-block;padding:8px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:var(--glass);text-decoration:none;color:var(--white);font-weight:700}
+
+    /* neon footer */
+    footer{margin-top:18px;text-align:center;color:rgba(255,255,255,0.45);font-size:13px}
+
+    /* effects */
+    .glow{text-shadow:0 8px 36px rgba(255,92,217,0.12)}
+    .neon-line{height:2px;background:linear-gradient(90deg, transparent, var(--pink), transparent);margin:20px 0;border-radius:2px}
+
+    /* responsive */
+    @media (max-width:900px){.content{flex-direction:column}.cover{width:100%;flex-basis:auto}}
+
+  </style>
 </head>
-
 <body>
+  <div class="wrap">
+    <div class="card">
+      <div class="top">
+        <div class="brand">
+          <div class="logo"><h3>90<br>PRA<br>TRÊS</h3></div>
+          <div>
+            <h1 class="title glow" style="margin-bottom:6px" data-text="PARTY">PARTY</h1>
+            <div class="subtitle">Primeira Mixtape</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:10px; align-items:center">
+          <button class="social" onclick="window.open('https://www.instagram.com/90_pratres_ofc/?utm_source=ig_web_button_share_sheet','_blank')">IG</button>
+          <button class="social" onclick="window.open('https://x.com','_blank')">X</button>
+          <button style="padding:10px 14px;border-radius:10px;background:var(--pink);border:none;color:#000;font-weight:800" onclick="openPresave()">Pré-save</button>
+        </div>
+      </div>
 
-<header>90 PRA TRÊS</header>
+      <div class="neon-line"></div>
 
-<section class="section" id="sobre">
-    <h2>Sobre a Gravadora</h2>
-    <p>A gravadora 90 PRA TRÊS nasceu com a proposta de elevar o TRAP ao seu nível máximo.
-       Zezão e Rafael lideram o movimento, enquanto Makita e João produzem os hits mais nojentos do Brasil.</p>
-</section>
+      <div class="content">
+        <div class="cover">
+          <img src="/mnt/data/7e3d7c3e-e0ea-4b3e-9b8c-7fe49f0c1268.png" alt="Capa PARTY">
+          <div class="badge">Mixtape • PARTY</div>
+        </div>
 
-<section class="section" id="album">
-    <h2>Próximo Álbum</h2>
-    <p><strong>PARTY</strong><br>
-       Mais informações em breve.</p>
-</section>
+        <div class="panel">
+          <div class="tracks">
+            <h3>Tracklist</h3>
+            <ol class="tracklist">
+              <li>INTRO <span>— 0:42</span></li>
+              <li>ELA CHAMA MEU VULGO <span>— 2:11</span></li>
+              <li>3 BECK PRA MIM <span>— 2:58</span></li>
+              <li>100% MUSTARD <span>— 3:05</span></li>
+              <li>ENXADAS VS MULIERES <span>— 2:34</span></li>
+              <li>MAIS 2,50 COMPRAVA UMA CALÇA <span>— 1:48</span></li>
+              <li>67 HAHAHAHA <span>— 2:20</span></li>
+              <li>ME SINTO PLATÃO <span>— 3:11</span></li>
+              <li>GLOCK <span>— 2:43</span></li>
+              <li>AURA DOS CAMPEÕES <span>— 3:00</span></li>
+              <li>SEXTA FEIRA PLAY TV <span>— 2:55</span></li>
+              <li>WE DID IT <span>— 3:22</span></li>
+            </ol>
+          </div>
 
-<section id="tracklist" class="section">
-    <h2>TRACKLIST</h2>
-    <ol class="tracklist">
-        <li>INTRO</li>
-        <li>ELA CHAMA MEU VULGO</li>
-        <li>3 BECK PRA MIM</li>
-        <li>100% MUSTARD</li>
-        <li>ENXADAS VS MULIERES</li>
-        <li>MAIS 2,50 COMPRAVA UMA CALÇA</li>
-        <li>67 HAHAHAHA</li>
-        <li>ME SINTO PLATÃO</li>
-        <li>GLOCK</li>
-        <li>AURA DOS CAMPEÕES</li>
-        <li>SEXTA FEIRA PLAY TV</li>
-        <li>WE DID IT</li>
-    </ol>
-</section>
+          <div style="margin-top:14px; display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap">
+            <div style="color:var(--muted)"><strong>Lançamento:</strong> EM BREVE</div>
+            <div style="font-weight:800; color:var(--pink)">90 PRA TRÊS</div>
+          </div>
+        </div>
 
-<footer>
-    © 90 PRA TRÊS — SHIT TRAP SUPREMACY
-</footer>
+        <div class="side">
+          <h4>Artistas</h4>
+          <p>Zezão • Rafael • Gabzhtz</p>
 
+          <h4 style="margin-top:12px">Produção</h4>
+          <p>Makita — produtor & compositor<br>João — produtor</p>
+
+          <div class="socials">
+            <a href="https://www.instagram.com/90_pratres_ofc/?utm_source=ig_web_button_share_sheet" target="_blank">Instagram</a>
+            <a href="#">X</a>
+          </div>
+        </div>
+      </div>
+
+      <footer>© 90 PRA TRÊS — PARTY • Todos os direitos reservados.</footer>
+    </div>
+  </div>
+
+  <!-- Presave modal -->
+  <div id="presaveModal" style="display:none; position:fixed; inset:0; align-items:center; justify-content:center; background:rgba(0,0,0,0.6); z-index:90">
+    <div style="width:100%; max-width:520px; background:#071018; padding:20px; border-radius:12px">
+      <h3 style="margin:0 0 8px 0">Pré-save</h3>
+      <p style="margin:0 0 12px 0">Deixe seu e-mail e avisaremos quando a mixtape for lançada.</p>
+      <div style="display:flex; gap:8px; margin-bottom:12px">
+        <input id="ps_name" placeholder="Seu nome" style="flex:1;padding:10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.05);color:var(--white)">
+        <input id="ps_email" placeholder="seu@exemplo.com" style="flex:1;padding:10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.05);color:var(--white)">
+      </div>
+      <div style="display:flex; gap:8px; justify-content:flex-end">
+        <button style="padding:10px 12px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.05);color:var(--white)" onclick="closePresave()">Cancelar</button>
+        <button style="padding:10px 12px;border-radius:8px;background:var(--pink);border:none;color:#000;font-weight:800" onclick="submitPresave()">Enviar</button>
+      </div>
+    </div>
+  </div>
+
+  <audio id="previewAudio" preload="none"></audio>
+
+  <script>
+    function openPresave(){ document.getElementById('presaveModal').style.display='flex' }
+    function closePresave(){ document.getElementById('presaveModal').style.display='none' }
+    function submitPresave(){ const n=document.getElementById('ps_name').value||'—'; const e=document.getElementById('ps_email').value||''; if(!e||!e.includes('@')){alert('E-mail inválido');return;} const list=JSON.parse(localStorage.getItem('presave_list')||'[]'); list.push({name:n,email:e,date:new Date().toISOString()}); localStorage.setItem('presave_list',JSON.stringify(list)); alert('Obrigado — você será avisado!'); closePresave() }
+
+    // fallback cover for GitHub: tries relative assets/cover.jpg if local path fails
+    const cover = document.querySelector('.cover img');
+    cover.addEventListener('error', ()=>{ cover.src='assets/cover.jpg'; });
+  </script>
 </body>
 </html>
